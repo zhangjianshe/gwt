@@ -250,6 +250,10 @@ public class MenuBar extends Widget implements PopupListener, HasAnimation,
         left = Math.min(left, getClientRight() - getOffsetWidth());
         left = Math.max(getClientLeft(), left);
       }
+      if (top + getOffsetHeight() > Window.getClientHeight()) {
+        top = Math.min(top, Window.getClientHeight()-getOffsetHeight());
+        top = Math.max(top, 0);
+      }
       setPopupPosition(left, top);
     }
 
